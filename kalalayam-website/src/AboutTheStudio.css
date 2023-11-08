@@ -1,0 +1,40 @@
+/* About the Studio section styles */
+.about-the-studio {
+    background-color: #f9f9f9;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-content h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.about-content p {
+    font-size: 18px;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+}
+
+.about-content button {
+    background-color: #ffc107;
+    color: #333;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.about-content button:hover {
+    background-color: #ffdb58;
+}

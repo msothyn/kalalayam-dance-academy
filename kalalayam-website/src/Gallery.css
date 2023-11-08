@@ -1,0 +1,32 @@
+/* Gallery section styles */
+.gallery-section {
+    background-color: #fff; /* Set the background color */
+    padding: 4rem 0;
+    text-align: center;
+    overflow: hidden; /* Hide overflowing images */
+}
+
+.gallery-container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    transition: transform 0.5s; /* Add smooth transition for sliding effect */
+    overflow: hidden; /* Hide overflowing images */
+}
+
+.gallery-item {
+    flex: 0 0 33.33%; /* Display 3 items at a time (adjust as needed) */
+    margin: 0;
+}
+
+.gallery-item img {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    transition: transform 0.2s;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05); /* Enlarge the image on hover */
+}

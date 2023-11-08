@@ -1,0 +1,34 @@
+/* Navbar styles */
+.fixed-navbar {
+    background-color: #333;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+}
+
+.fixed-navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+.fixed-navbar li {
+    margin: 0 1rem;
+}
+
+.fixed-navbar a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.fixed-navbar a:hover {
+    color: #ffc107; /* Change the color when hovered */
+}

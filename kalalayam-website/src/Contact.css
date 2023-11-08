@@ -1,0 +1,55 @@
+/* Contact section styles */
+.contact-section {
+    background-color: #f9f9f9;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-container h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.form-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-size: 18px;
+    color: #666;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button[type="submit"],
+.whatsapp-button {
+    background-color: #25d366;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover,
+.whatsapp-button:hover {
+    background-color: #128C7E;
+}

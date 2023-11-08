@@ -1,0 +1,44 @@
+/* Landing section styles */
+.landing-section {
+    background-image: url('beige.jpeg'); /* Set your image path */
+    background-size: cover;
+    background-position: center;
+    height: 70vh; /* Adjust to take up half the screen */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.landing-content {
+    background: rgba(0, 0, 0, 0.7); /* Background overlay to make text more visible */
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.landing-content h1 {
+    color: #fff;
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.landing-content p {
+    color: #fff;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.landing-content button {
+    background-color: #ffc107;
+    color: #333;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.landing-content button:hover {
+    background-color: #ffdb58; /* Change the color on hover */
+}
