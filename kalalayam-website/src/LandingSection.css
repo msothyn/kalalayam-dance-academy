@@ -1,9 +1,9 @@
 /* Landing section styles */
 .landing-section {
-    background-image: url('beige.jpeg'); /* Set your image path */
+    background-image: url('./photos/image2.jpeg'); /* Set your image path */
     background-size: cover;
     background-position: center;
-    height: 70vh; /* Adjust to take up half the screen */
+    height: 80vh; /* Adjust to take up half the screen */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -14,18 +14,21 @@
     background: rgba(0, 0, 0, 0.7); /* Background overlay to make text more visible */
     padding: 2rem;
     border-radius: 10px;
+    margin-top: 3cm;
 }
 
 .landing-content h1 {
     color: #fff;
     font-size: 36px;
     font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .landing-content p {
     color: #fff;
     font-size: 18px;
     margin-top: 10px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .landing-content button {
@@ -42,3 +45,37 @@
 .landing-content button:hover {
     background-color: #ffdb58; /* Change the color on hover */
 }
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+    .landing-section {
+        background-image: url('./photos/image2.jpeg'); /* Set your image path */
+        background-size: cover;
+        background-position: center;
+        height: 60vh; /* Adjust to take up half the screen */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    .landing-content {
+      font-size: 14px;
+      padding: 1rem;
+      margin-top: 1rem;
+    }
+  
+    .landing-content h1 {
+      font-size: 20px;
+    }
+  
+    .landing-content p {
+      font-size: 12px;
+      margin-top: 6px;
+    }
+  
+    .landing-content button {
+      font-size: 12px;
+      padding: 6px 12px;
+      margin-top: 12px;
+    }
+  }

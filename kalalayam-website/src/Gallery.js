@@ -1,44 +1,84 @@
-import React, { useState, useEffect } from 'react';
-import'./Gallery.css'
+import React, { useState, useEffect, useRef } from 'react';
+import './Slideshow.css'; // Import the CSS file
+import image1 from './photos/image1.jpeg'; // Import your image files
+import image2 from './photos/image2.jpeg';
+import image3 from './photos/kalalayamLogo.png';
+import image4 from './photos/dog.jpeg';
+// ... import other images
 
-const Gallery = () => {
-    const images = [
-        'image1.jpeg',
-        'image2.jpg',
-        'image3.jpg',
-        'image4.jpg',
-        'image5.jpg',
-        'image6.jpg',
-        // Add more image URLs here
-    ];
+const Slideshow = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [expandedImage, setExpandedImage] = useState(null);
+  const expandedImageRef = useRef(null);
 
-    const [currentSet, setCurrentSet] = useState(0);
+  const yourImages = [
+    { src: image1, alt: 'Image 1' },
+    { src: image2, alt: 'Image 2' },
+    { src: image3, alt: 'Image 3' },
+    { src: image4, alt: 'Image 4' },
+    // ... add other images similarly
+  ];
 
-    useEffect(() => {
-        // Create a function to advance the gallery to the next set of images
-        const advanceGallery = () => {
-            setCurrentSet((prevSet) => (prevSet + 1) % (images.length - 2));
-        };
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 3) % yourImages.length);
+    }, 3000);
 
-        // Set an interval for automatic scrolling (e.g., every 3 seconds)
-        const interval = setInterval(advanceGallery, 3000);
+    return () => {
+      clearInterval(interval);
+    };
+  }, [yourImages.length]);
 
-        return () => {
-            clearInterval(interval); // Clean up the interval when the component unmounts
-        };
-    }, [images]);
+  const renderImages = () => {
+    const displayedImages = [];
+    for (let i = 0; i < 3; i++) {
+      const index = (currentImageIndex + i) % yourImages.length;
+      displayedImages.push(
+        <div key={index} className={`slide ${i === 1 ? 'active' : ''}`}>
+          <img src={yourImages[index].src} alt={yourImages[index].alt} onClick={() => handleImageClick(yourImages[index].src)} />
+        </div>
+      );
+    }
+    return displayedImages;
+  };
 
-    return (
-        <section className="gallery-section">
-            <div className="gallery-container">
-                {images.slice(currentSet, currentSet + 3).map((image, index) => (
-                    <div key={index} className="gallery-item">
-                        <img src={image} alt={`Gallery Image ${index + 1}`} />
-                    </div>
-                ))}
-            </div>
-        </section>
-    );
+  const handleImageClick = (imageSrc) => {
+    setExpandedImage(imageSrc);
+  };
+
+  const handleCloseClick = () => {
+    setExpandedImage(null);
+  };
+
+  const handleClickOutside = (event) => {
+    if (expandedImageRef.current && !expandedImageRef.current.contains(event.target)) {
+      setExpandedImage(null);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+  return (
+    <div>
+      <div className="slideshow-container">
+        <div className="slides">
+          {renderImages()}
+        </div>
+        {expandedImage && (
+          <div className="expanded-image">
+            <span className="close-button" onClick={handleCloseClick}>Close</span>
+            <img src={expandedImage} alt="Expanded" />
+          </div>
+        )}
+      </div>
+      <p className="slideshow-caption">Click on an image to enlarge.</p>
+    </div>
+  );
 };
 
-export default Gallery;
+export default Slideshow;

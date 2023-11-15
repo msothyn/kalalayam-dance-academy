@@ -30,6 +30,7 @@ label {
 
 input[type="text"],
 input[type="email"],
+input[type="tel"],
 textarea {
     width: 100%;
     padding: 10px;
@@ -38,8 +39,7 @@ textarea {
     border-radius: 5px;
 }
 
-button[type="submit"],
-.whatsapp-button {
+button.whatsapp-button {
     background-color: #25d366;
     color: #fff;
     padding: 10px 20px;
@@ -47,9 +47,40 @@ button[type="submit"],
     border-radius: 5px;
     font-size: 18px;
     cursor: pointer;
+    margin-top: 10px;
 }
 
-button[type="submit"]:hover,
-.whatsapp-button:hover {
+button.whatsapp-button:hover {
     background-color: #128C7E;
+}
+
+/* Media query for mobile devices */
+@media only screen and (max-width: 768px) {
+    .contact-container {
+        padding: 0 20px; /* Adjust the padding for mobile view */
+    }
+
+    .contact-container h2 {
+        font-size: 28px; /* Decrease the font size for mobile view */
+        margin-bottom: 0.5rem; /* Adjust margin for mobile view */
+    }
+
+    .form-group {
+        margin-bottom: 15px; /* Adjust margin for mobile view */
+    }
+
+    label {
+        font-size: 16px; /* Decrease font size for labels on mobile */
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea {
+        font-size: 14px; /* Decrease font size for inputs on mobile */
+    }
+
+    button.whatsapp-button {
+        font-size: 16px; /* Decrease font size for button on mobile */
+    }
 }

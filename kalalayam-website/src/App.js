@@ -2,9 +2,9 @@ import React from 'react';
 import Navbar from './navbar';
 import LandingPage from './LandingPage';
 import AboutTheStudio from './AboutTheStudio'; 
-import Gallery from './Gallery';
 import AboutTheTeacher from './AboutTheTeacher'; 
 import Contact from './Contact';
+import Gallery from './Gallery';
 
 function App() {
     return (
@@ -12,8 +12,10 @@ function App() {
             <Navbar />
             <LandingPage />
             <AboutTheStudio />
-            <Gallery/>
             <AboutTheTeacher/>
+            <Gallery/>
+            <br></br>
+            <br></br>
             <Contact/>
         </div>
     );
